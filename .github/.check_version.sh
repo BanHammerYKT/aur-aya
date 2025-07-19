@@ -7,11 +7,11 @@ REPO_FORMATTED_VERSION=""
 REPO_APPIMAGE_URL="https://github.com/liriliri/aya/releases/download/v%version%/AYA-%version%-linux-x86_64.AppImage"
 
 
-# format version AA.B.C.DDD-E to AABBCCDDDDEE
+# format version AA.B.C.DD to AABBCCDD
 getformattedversion() {
     version=$1
     IFS='.-' read -r -a parts <<< "$version"
-    formatted_version=$(printf "%02d%02d%02d%04d%02d" "${parts[0]}" "${parts[1]}" "${parts[2]}" "${parts[3]}" "${parts[4]}")
+    formatted_version=$(printf "%02d%02d%02d%02d" "${parts[0]:-0}" "${parts[1]:-0}" "${parts[2]:-0}" "${parts[3]:-0}")
     echo "$formatted_version"
 }
 
@@ -50,7 +50,7 @@ echo "Local formatted version: $LOCAL_FORMATTED_VERSION"
 echo "Repo formatted version: $REPO_FORMATTED_VERSION"
 echo "Repo AppImage url: $REPO_APPIMAGE_URL"
 
-if [[ $LOCAL_FORMATTED_VERSION != $REPO_FORMATTED_VERSION ]]; then
+if (($LOCAL_FORMATTED_VERSION < $REPO_FORMATTED_VERSION)); then
     echo "New version detected. Updating local repo ..."
     updatelocalrepo
     echo "REPO_VERSION=$REPO_VERSION" >> "$GITHUB_OUTPUT"
