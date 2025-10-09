@@ -1,6 +1,6 @@
 pkgbase = aya
 	pkgdesc = AYA is a desktop application for easily controlling android devices, which can be considered as a GUI wrapper for ADB.
-	pkgver = 1.12.2
+	pkgver = 1.13.0
 	pkgrel = 1
 	url = https://aya.liriliri.io/
 	arch = x86_64
@@ -8,10 +8,10 @@ pkgbase = aya
 	depends = zlib
 	depends = hicolor-icon-theme
 	depends = fuse2
-	noextract = aya-1.12.2.AppImage
+	noextract = aya-1.13.0.AppImage
 	options = !strip
 	options = !debug
-	source_x86_64 = aya-1.12.2.AppImage::https://github.com/liriliri/aya/releases/download/v1.12.2/AYA-1.12.2-linux-x86_64.AppImage
+	source_x86_64 = aya-1.13.0.AppImage::https://github.com/liriliri/aya/releases/download/v1.13.0/AYA-1.13.0-linux-x86_64.AppImage
 	sha256sums_x86_64 = SKIP
 
 pkgname = aya

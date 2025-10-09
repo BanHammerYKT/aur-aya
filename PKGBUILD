@@ -1,7 +1,7 @@
 # Maintainer: BanHammer  <no@e.mail>
 
 pkgname="aya"
-pkgver=1.12.2
+pkgver=1.13.0
 pkgrel=1
 pkgdesc="AYA is a desktop application for easily controlling android devices, which can be considered as a GUI wrapper for ADB."
 arch=('x86_64')
